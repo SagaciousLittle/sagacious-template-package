@@ -1,0 +1,48 @@
+{
+  "name": "@sagacious/template-package",
+  "version": "0.0.1",
+  "description": "dDeveloping templates for npm package",
+  "scripts": {
+    "start": "rollup -wc",
+    "build": "rollup -c",
+    "test": "jest"
+  },
+  "keywords": [
+    "template",
+    "package",
+    "toolkit",
+    "sagacious"
+  ],
+  "files": [
+    "dist",
+    "lib"
+  ],
+  "author": {
+    "name": "SagaciousLittle",
+    "email": "guoxiaozhuang4@outlook.com"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "@rollup/plugin-typescript": "^2.1.0",
+    "@sagacious/fs-wrapper": "^0.0.4",
+    "@types/jest": "^24.0.25",
+    "@typescript-eslint/parser": "^2.15.0",
+    "eslint": "^6.8.0",
+    "eslint-config-sagas": "^0.0.6",
+    "jest": "^24.9.0",
+    "rollup": "^1.29.0",
+    "rollup-plugin-delete": "^1.1.0",
+    "rollup-plugin-eslint": "^7.0.0",
+    "rollup-plugin-json": "^4.0.0",
+    "ts-jest": "^24.3.0",
+    "typescript": "^3.7.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SagaciousLittle/sagacious-template-package.git"
+  },
+  "bugs": {
+    "url": "https://github.com/SagaciousLittle/sagacious-template-package/issues"
+  },
+  "homepage": "https://github.com/SagaciousLittle/sagacious-template-package#readme"
+}
