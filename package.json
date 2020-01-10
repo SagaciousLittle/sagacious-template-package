@@ -5,7 +5,8 @@
   "scripts": {
     "start": "rollup -wc",
     "build": "rollup -c",
-    "test": "jest"
+    "test": "jest",
+    "prepublish": "npm run build"
   },
   "keywords": [
     "template",
