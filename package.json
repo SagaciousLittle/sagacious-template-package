@@ -1,6 +1,6 @@
 {
   "name": "@sagacious/template-package",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "dDeveloping templates for npm package",
   "scripts": {
     "start": "rollup -wc",
