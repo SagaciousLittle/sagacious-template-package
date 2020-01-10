@@ -9,7 +9,7 @@ const libOptions = fs.readDirProSync(path.resolve(__dirname, './src'), {
   deep: true,
   withFileTypes: true,
 })
-  .filter(f => /\.ts$/.test(f.absolutePath))
+  .filter(f => /\.ts$/.test(f.absolutePath) && !/index\.ts$/.test(f.absolutePath))
   .map(f => ({
     input: f.absolutePath,
     output: {
