@@ -4,9 +4,9 @@
   "description": "dDeveloping templates for npm package",
   "scripts": {
     "start": "rollup -wc",
-    "build": "rollup -c",
+    "build": "rollup -c && tsc -b tsconfig.prod.json",
     "test": "jest",
-    "prepublish": "npm run build"
+    "prepublishOnly": "npm run build"
   },
   "keywords": [
     "template",
@@ -15,6 +15,7 @@
     "sagacious"
   ],
   "main": "./dist/index.js",
+  "types": "types",
   "author": {
     "name": "SagaciousLittle",
     "email": "guoxiaozhuang4@outlook.com"

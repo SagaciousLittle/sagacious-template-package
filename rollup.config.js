@@ -10,22 +10,28 @@ const libOptions = fs.readDirProSync(path.resolve(__dirname, './src'), {
   withFileTypes: true,
 })
   .filter(f => /\.ts$/.test(f.absolutePath) && !/index\.ts$/.test(f.absolutePath))
-  .map(f => ({
-    input: f.absolutePath,
-    output: {
-      file: `./lib/${f.name.replace(/\.ts$/, '')}.js`,
-      format: 'cjs',
-    },
-    plugins: [
-      json(),
-      eslint({
-        fix: true,
-      }),
-      ts({
-        module: 'CommonJS',
-      }),
-    ],
-  }))
+  .map(({ absolutePath, name }) => {
+    const targetName = `${name.replace(/\.ts$/, '')}.js`
+    return {
+      input: absolutePath,
+      output: {
+        file: `./lib/${targetName}`,
+        format: 'cjs',
+      },
+      plugins: [
+        del({
+          targets: `./lib/${targetName}`,
+        }),
+        json(),
+        eslint({
+          fix: true,
+        }),
+        ts({
+          module: 'CommonJS',
+        }),
+      ],
+    }
+  })
 
 module.exports = [
   {
@@ -36,10 +42,7 @@ module.exports = [
     },
     plugins: [
       del({
-        targets: [
-          './dist/*',
-          './lib/*',
-        ],
+        targets: './dist/*',
       }),
       json(),
       ts(),
