@@ -15,10 +15,6 @@
     "sagacious"
   ],
   "main": "./dist/index.js",
-  "files": [
-    "dist",
-    "lib"
-  ],
   "author": {
     "name": "SagaciousLittle",
     "email": "guoxiaozhuang4@outlook.com"
