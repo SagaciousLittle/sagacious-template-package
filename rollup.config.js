@@ -1,6 +1,6 @@
 const { eslint } = require('rollup-plugin-eslint')
-const json = require('rollup-plugin-json')
-const ts = require('@rollup/plugin-typescript')
+const json = require('@rollup/plugin-json')
+const ts = require('rollup-plugin-ts')
 const del = require('rollup-plugin-delete')
 const fs = require('@sagacious/fs-wrapper')
 const path = require('path')
