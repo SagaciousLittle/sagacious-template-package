@@ -3,6 +3,8 @@ const json = require('@rollup/plugin-json')
 const ts = require('rollup-plugin-ts')
 const del = require('rollup-plugin-delete')
 const fs = require('@sagacious/fs-wrapper')
+const reslove = require('@rollup/plugin-node-resolve')
+const cjs = require('@rollup/plugin-commonjs')
 const path = require('path')
 
 const libOptions = fs.readDirProSync(path.resolve(__dirname, './src'), {
@@ -23,6 +25,8 @@ const libOptions = fs.readDirProSync(path.resolve(__dirname, './src'), {
           targets: `./lib/${targetName}`,
         }),
         json(),
+        reslove(),
+        cjs(),
         eslint({
           fix: true,
         }),
@@ -45,6 +49,11 @@ module.exports = [
         targets: './dist/*',
       }),
       json(),
+      reslove(),
+      cjs(),
+      eslint({
+        fix: true,
+      }),
       ts(),
     ],
   },
